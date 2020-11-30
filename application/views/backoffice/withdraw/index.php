@@ -3,7 +3,11 @@
     <div class="col-md-12">
       <div class="bg-white border-radius-10 border">
         <div class="p-3">
-
+				<div class="float-left">
+						<div class="form-group">
+							<a href="#" class="btn btn-info btn-info-gradient">Export Data</a>
+						</div>
+					</div>
           <div class="table-responsive">
             <table class="table" id="table">
               <thead>

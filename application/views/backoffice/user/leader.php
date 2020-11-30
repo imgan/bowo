@@ -3,7 +3,7 @@
 
     <div class="col-md-12">
       <div class="mb-3">
-        <a href="<?=base_url();?>backoffice/user/leader_add" class="btn btn-primary float-right">Tambah Leader</a>
+        <a href="<?=base_url();?>backoffice/user/leader_add" class="btn btn-primary float-right">Tambah Owner</a>
         <div class="clearfix"></div>
       </div>
       

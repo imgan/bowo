@@ -175,7 +175,7 @@ class User extends Backoffice_Controller {
 
   public function leader()
 	{
-    $this->data['page_title'] = 'Leader';
+    $this->data['page_title'] = 'Owner';
     $this->data['page'] = 'backoffice/user/leader';
 
     $this->data['breadcrumbs'] = [
@@ -184,7 +184,7 @@ class User extends Backoffice_Controller {
         'link' => '#'
       ],
       [
-        'title' => 'Leader',
+        'title' => 'Owner',
         'link' => ''
       ]
     ];
@@ -222,7 +222,7 @@ class User extends Backoffice_Controller {
       'email' => $this->input->post('email', TRUE),
       'password' => password_hash($this->input->post('password', TRUE), PASSWORD_BCRYPT),
       'referral' => $this->User_model->generate_referral(),
-      'role' => 'leader'
+      'role' => 'owner'
     ];
 
     $check = $this->User_model->checkUser($params['email']);

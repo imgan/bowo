@@ -78,7 +78,8 @@ class User_model extends CI_Model
             'affiliate',
             'developer',
             'provider',
-            'leader',
+			'leader',
+			'owner',
             'mediator',
             'cs'
         ])
@@ -100,7 +101,6 @@ class User_model extends CI_Model
     {
         $check = $this->db
         ->where('email', $email)
-        ->where('role', 'admin')
         ->get('users');
         
         if($check->num_rows() > 0) {
@@ -132,10 +132,10 @@ class User_model extends CI_Model
     public function setLoginAdmin($data)
     {
         $data = array(
-            'admin'  => $data,
-            'logged_in' => TRUE
+			'admin'  => $data,
+			'role' => $data->role,
+			'logged_in' => TRUE,
         );
-        
         if(!$this->session->set_userdata($data)) {
             return false;
         }
@@ -301,7 +301,7 @@ class User_model extends CI_Model
         
         $this->datatables->from('users');
 
-        $this->datatables->where('users.role', 'leader');
+        $this->datatables->where('users.role', 'owner');
 
         //add this line for join
         $this->datatables->add_column('action', "<a href='".base_url()."member/transaction_detail/$1' class='btn btn-sm btn-info btn-info-gradient'><i class='fas fa-eye'></i> Detail</a>", 'order_id');
